@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Minor Project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-light fixed-top">
+        <h3 style="letter-spacing : 2px;"><a class="navbar-brand ml-5 mt-3" href="/">Training and Placement Group - Pre Final Year</a></h3>
+        <form class="form-inline">
+                <a href="{% url 'chat' %}"><button class="btn btn-outline-danger pull-right mr-3 mb-3 mt-3" type="button">CHAT</button></a>
+                <a href="{% url 'logout' %}"><button class="btn btn-outline-danger pull-right mr-3 mb-3 mt-3" type="button">LOGOUT</button></a>
+        </form>
+    </nav>
+    <br>
+    <section class="section">
+        <div class="container hero-body">
+            {% for data in dataset %}
+            <article class="media content-section">
+                <div class="media-body">
+                    <blockquote class="blockquote text-right">
+                            <p class="mb-0 text-primary text-left">Notice {{data.id}} - {{data.Heading}}</p>
+                            <footer class="blockquote-footer text-success"><strong class="text-success">Admin </strong>on <cite title="Source Title text-secondary">{{data.date}}</cite></footer>
+                    </blockquote>
+                  <p class="article-content font-weight-light">{{ data.Passage|linebreaksbr }}</p>
+                </div>
+            </article>
+            <hr>
+            {% endfor %}
+        </div>
+    </section>
+</body>
+
+</html>
+

@@ -1,0 +1,44 @@
+{%load crispy_forms_tags%}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TnP Group</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-light fixed-top pb-0 pd-5">
+        <h3 style="letter-spacing : 2px;"><a class="navbar-brand ml-5 mt-3" href="/">Training and Placement Group - Pre Final Year</a></h3>
+        <form class="form-inline">
+                <a href="/admin"><button type="button" class="btn btn-outline-danger pull-right mr-3 mb-3 mt-3">ADMIN</button></a>
+        </form>
+    </nav>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="h-100 row align-items-center ml-5 mr-5">
+            <div class="col ml-5 mr-5">
+                <h1 class="text-info text-center mb-5 font-weight-light">Kindly Varify Your Identity</h1>
+                    <form method="POST">
+                            {% csrf_token %}
+                            {{ form|crispy }}
+                            <br>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-outline-info">LOGIN</button>
+                            </div>
+                    </form>
+                <br>
+        </div>
+</body>
+
+</html>
