@@ -50,10 +50,10 @@ span.tab-space {padding-left:15em;}
         </div>
         <div class="fixed-bottom bg-dark mb-3 pt-2 pb-2">
             <div class="floatRight">
-                <form class="form-inline ml-3" method="POST">
+                <form class="form-inline mr-3" method="POST">
                     {% csrf_token %}
                     {{ form|crispy }}
-                    <button type="submit" value="SUBMIT" class="btn btn-primary ml-5 btn pull-right">SUBMIT</button>
+                    <button type="submit" value="SUBMIT" class="btn btn-primary mr-5 ml-5 btn pull-right">SUBMIT</button>
                 </form>
             </div>
         </div>
