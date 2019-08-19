@@ -9,4 +9,4 @@ class ChatForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super(ChatForm, self).__init__(*args, **kwargs)
         self.fields['message'].widget.attrs.update({'placeholder': 'Your Message here'})
-        self.fields['my_field'].label = False
+        self.fields['message'].label = False
