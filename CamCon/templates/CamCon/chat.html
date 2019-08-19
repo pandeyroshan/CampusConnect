@@ -19,6 +19,10 @@ mark.red {
     background: none;
 }
 span.tab-space {padding-left:15em;}
+
+.floatRight { 
+    float: right;
+}
 </style>
 
 <body>
@@ -45,11 +49,13 @@ span.tab-space {padding-left:15em;}
             {% endfor %}
         </div>
         <div class="fixed-bottom bg-dark mb-3 pt-2 pb-2">
+            <div class="floatRight">
                 <form class="form-inline ml-3" method="POST">
                     {% csrf_token %}
                     {{ form|crispy }}
                     <button type="submit" value="SUBMIT" class="btn btn-primary ml-5 btn pull-right">SUBMIT</button>
                 </form>
+            </div>
         </div>
     </section>
 </body>
