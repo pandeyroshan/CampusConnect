@@ -40,7 +40,18 @@ span.tab-space {padding-left:15em;}
             <article class="media content-section">
                 <div class="media-body">
                     <blockquote class="blockquote text-right">
-                            <p class="mb-0 text-left font-weight-light"><mark class="red">{{data.user}}</mark>: {{ data.message|linebreaksbr }}</p>
+                            <p class="mb-0 text-left font-weight-light">
+                                {%if data.user.id == request.user.id%}
+                                <mark class="red">
+                                    {{data.user}} 
+                                </mark>
+                                {%else%}
+                                <mark class="black">
+                                        {{data.user}}
+                                </mark>
+                                {%endif%}
+                                : {{ data.message|linebreaksbr }}
+                            </p>
                             <footer class="blockquote-footer text-success"><strong class="text-success"></strong><cite title="Source Title text-secondary">{{data.timeStamp}}</cite></footer>
                     </blockquote>
                 </div>
