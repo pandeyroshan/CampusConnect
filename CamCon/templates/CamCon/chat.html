@@ -42,11 +42,11 @@ span.tab-space {padding-left:15em;}
                     <blockquote class="blockquote text-right">
                             <p class="mb-0 text-left font-weight-light">
                                 {%if data.user.id == request.user.id%}
-                                <mark class="red">
-                                    {{data.user}} 
+                                <mark class="text-success">
+                                        {{data.user}}
                                 </mark>
                                 {%else%}
-                                <mark class="black">
+                                <mark class="">
                                         {{data.user}}
                                 </mark>
                                 {%endif%}
