@@ -12,6 +12,9 @@ class Notices(models.Model):
 
     def __str__(self):
         return "Notice - "+str(self.id)
+    class Meta:
+        verbose_name = 'Notice'
+        verbose_name_plural = 'Notice'
 
 class Chat(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -20,3 +23,6 @@ class Chat(models.Model):
 
     def __str__(self):
         return "Message from "+str(self.user)
+    class Meta:
+        verbose_name = 'Chat Data'
+        verbose_name_plural = 'Chat Data'
